@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>List News</title>
+        <style type="text/css">
+            .evenRow {
+                background-color: #DDFED1;
+            }
+            .oddRow {
+                background-color: #F7F9D0;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form id="homeForm">
+            <h:panelGrid columns="1">
+                <h:commandLink value="Add New Message" action="createNews"/>
+                <h:dataTable id="listNews" value="#{listNewsBean.newsItems}" var="item" 
+                             rowClasses="evenRow, oddRow" border="1" cellpadding="4" cellspacing="4">
+                    <f:facet name="header">
+                        Recent News
+                    </f:facet>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Title" />
+                        </f:facet>
+                        <h:outputText value="#{item.title}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="News" />
+                        </f:facet>
+                        <h:outputText value="#{item.body}"/>
+                    </h:column>
+                </h:dataTable>
+                <h:outputText value="#{listNewsBean.activeSessionsCount} user(s) reading the news"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

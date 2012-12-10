@@ -1,0 +1,3 @@
+About the NewsWebAppMdb Demo
+-----------------------------
+Netbeans.org provides a nice examle of how to use a EJB 3.1 Message Driven Bean (MDB) in an Enterprise Java Application and packaging into an EAR with three sub-modules: web, ejb and application. However, as of EJB 3.1 this complex packaging is no longer necessary for simple, local components. Now EJBs can be packaged in the web module (WAR) and deployed to the appropriate containers (servlet and ejb). The Netbeans demo does not show this. It also does not use JSF, which this example does.
